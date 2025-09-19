@@ -1,0 +1,11 @@
+body::after {
+	content: "";
+	position: fixed;
+	top: 0;
+	right: 0;
+	width: 25em;
+	height: 100vh;
+	background: url('../images/wbd1.png') right top no-repeat;
+	background-size: contain;
+	opacity: 0.9;
+}

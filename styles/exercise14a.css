@@ -1,0 +1,14 @@
+
+body {
+    margin-left: 110px;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 110px;
+    height: 100vh;
+    background: url('../images/bike.png') left top repeat-y;
+}
