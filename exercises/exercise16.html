@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise 16 - Clock</title>
+    <style>
+        #clock {
+            font-size: 2em;
+            font-family: monospace;
+            text-align: center;
+            margin-top: 50px;
+        }
+        #time {
+            font-size: 2em;
+            font-family: monospace;
+            text-align: center;
+            margin-top: 50px;
+        }
+    </style>
+    <script src="../scripts/exercise16.js"></script>
+</head>
+<body>
+    <!-- So didnt say wether he wanted military time or not so I did both -->
+    <div id="clock">--:--:--</div>
+    <div id="time">--:--:--</div>
+    <script>
+        setInterval(UpdateTime, 1000);
+        setInterval(UpdateTimeMili, 1000);
+    </script>
+</body>
+</html>

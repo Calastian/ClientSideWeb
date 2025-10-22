@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QEP Global Learning - Appalachian State University</title>
+    <link rel="stylesheet" href="../styles/project1.css">
+</head>
+<body>
+    <header>
+        <div class="headercontent">
+            <div class="headerlogo">
+                <img src="../images/appstate-new-1200.svg" alt="Appalachian State University" class="appstatelogo">
+            </div>
+            <h1>Quality Enhancement Plan</h1>
+            <p>Connecting faculty, staff, and students through global opportunities</p>
+        </div>
+    </header>
+
+    <main>
+        <section id="languagesearch" class="searchsection">
+            <article>
+                <h3>Search for People by Language</h3>
+                <div class="searchcontrols">
+                    <div class="controlgroup">
+                        <label for="languageselect">Language:</label>
+                        <select id="languageselect" name="language">
+                            <option value="">Select Language</option>
+                            <option value="French">French</option>
+                            <option value="Arabic">Arabic</option>
+                            <option value="Spanish">Spanish</option>
+                            <option value="German">German</option>
+                            <option value="Portuguese">Portuguese</option>
+                        </select>
+                    </div>
+                    <div class="controlgroup">
+                        <label for="proficiencyselect">Proficiency:</label>
+                        <select id="proficiencyselect" name="proficiency">
+                            <option value="low">Low</option>
+                            <option value="med">Medium</option>
+                            <option value="high">High</option>
+                        </select>
+                    </div>
+                    <button type="button" class="searchbtn">Search</button>
+                </div>
+                
+                <div class="tablecontainer">
+                    <table id="languageresults">
+                        <thead>
+                            <tr>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                                <th>Language</th>
+                                <th>Level of Proficiency</th>
+                                <th>Email</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><a href="#" class="personlink">Noureddine</a></td>
+                                <td>Abidi</td>
+                                <td>French</td>
+                                <td>High</td>
+                                <td>n.abidi@ttu.edu</td>
+                            </tr>
+                            <tr>
+                                <td><a href="#" class="personlink">Noureddine</a></td>
+                                <td>Abidi</td>
+                                <td>Arabic</td>
+                                <td>High</td>
+                                <td>n.abidi@ttu.edu</td>
+                            </tr>
+                            <tr>
+                                <td><a href="#" class="personlink">Amma</a></td>
+                                <td>Akrofi</td>
+                                <td>French</td>
+                                <td>Low</td>
+                                <td>amma.akrofi@ttu.edu</td>
+                            </tr>
+                            <tr>
+                                <td><a href="#" class="personlink">Adelia</a></td>
+                                <td>Aquino</td>
+                                <td>Spanish</td>
+                                <td>Medium</td>
+                                <td>adelia.aquino@ttu.edu</td>
+                            </tr>
+                            <tr>
+                                <td><a href="#" class="personlink">Adelia</a></td>
+                                <td>Aquino</td>
+                                <td>German</td>
+                                <td>Low</td>
+                                <td>adelia.aquino@ttu.edu</td>
+                            </tr>
+                            <tr>
+                                <td><a href="#" class="personlink">Adelia</a></td>
+                                <td>Aquino</td>
+                                <td>Portuguese</td>
+                                <td>High</td>
+                                <td>adelia.aquino@ttu.edu</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </article>
+        </section>
+
+        <section id="academicsearch" class="searchsection">
+            <article>
+                <h3>Search by Academic Affiliation, Country and Last Name</h3>
+                <div class="searchcontrols">
+                    <div class="controlgroup">
+                        <label for="departmentselect">Academic Department:</label>
+                        <select id="departmentselect" name="department">
+                            <option value="">Select Department</option>
+                            <option value="Plant and Soil Science">Plant and Soil Science</option>
+                            <option value="Curriculum Studies and Teacher Education">Curriculum Studies and Teacher Education</option>
+                            <option value="Chemistry and Biochemistry">Chemistry and Biochemistry</option>
+                            <option value="Biological Sciences">Biological Sciences</option>
+                        </select>
+                    </div>
+                    <div class="controlgroup">
+                        <label for="collegeselect">Academic College:</label>
+                        <select id="collegeselect" name="college">
+                            <option value="">Select College</option>
+                            <option value="College of Agricultural Sciences and Natural Resources">College of Agricultural Sciences and Natural Resources</option>
+                            <option value="College of Education">College of Education</option>
+                            <option value="College of Arts and Sciences">College of Arts and Sciences</option>
+                        </select>
+                    </div>
+                    <div class="controlgroup">
+                        <label for="countryselect">Country:</label>
+                        <select id="countryselect" name="country">
+                            <option value="">Select Country</option>
+                            <option value="Sweden">Sweden</option>
+                            <option value="Sierra Leone">Sierra Leone</option>
+                            <option value="Germany">Germany</option>
+                            <option value="Bhutan">Bhutan</option>
+                            <option value="Brazil">Brazil</option>
+                        </select>
+                    </div>
+                    <div class="controlgroup">
+                        <label for="lastnameselect">Last Name:</label>
+                        <select id="lastnameselect" name="lastname">
+                            <option value="">Select Last Name</option>
+                            <option value="Abidi">Abidi</option>
+                            <option value="Akrofi">Akrofi</option>
+                            <option value="Aquino">Aquino</option>
+                            <option value="Arsuffi">Arsuffi</option>
+                            <option value="Auld">Auld</option>
+                        </select>
+                    </div>
+                    <button type="button" class="searchbtn">Search</button>
+                </div>
+                
+                <div class="tablecontainer">
+                    <table id="academicresults">
+                        <thead>
+                            <tr>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                                <th>College</th>
+                                <th>Department</th>
+                                <th>Country</th>
+                                <th>Travelled (Y/N)</th>
+                                <th>Project Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><a href="#" class="personlink">Noureddine</a></td>
+                                <td>Abidi</td>
+                                <td>College of Agricultural Sciences and Natural Resources</td>
+                                <td>Plant and Soil Science</td>
+                                <td>Sweden</td>
+                                <td>No</td>
+                                <td>Sweden Research at KTH</td>
+                            </tr>
+                            <tr>
+                                <td><a href="#" class="personlink">Amma</a></td>
+                                <td>Akrofi</td>
+                                <td>College of Education</td>
+                                <td>Curriculum Studies and Teacher Education</td>
+                                <td>Sierra Leone</td>
+                                <td>-</td>
+                                <td>Sierra Leone Presentation at Schlumberger Foundation</td>
+                            </tr>
+                            <tr>
+                                <td><a href="#" class="personlink">Adelia</a></td>
+                                <td>Aquino</td>
+                                <td>College of Arts and Sciences</td>
+                                <td>Chemistry and Biochemistry</td>
+                                <td>Germany</td>
+                                <td>Yes</td>
+                                <td>Germany Research at University of Koblenz, Landau</td>
+                            </tr>
+                            <tr>
+                                <td><a href="#" class="personlink">Tom</a></td>
+                                <td>Arsuffi</td>
+                                <td>College of Arts and Sciences</td>
+                                <td>Biological Sciences</td>
+                                <td>Bhutan</td>
+                                <td>No</td>
+                                <td>Bhutan Research with Government of Bhutan</td>
+                            </tr>
+                            <tr>
+                                <td><a href="#" class="personlink">Dick</a></td>
+                                <td>Auld</td>
+                                <td>College of Agricultural Sciences and Natural Resources</td>
+                                <td>Plant and Soil Science</td>
+                                <td>Brazil</td>
+                                <td>Yes</td>
+                                <td>Brazil Research at UNESP</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </article>
+        </section>
+
+        <section id="studyabroadsearch" class="searchsection">
+            <article>
+                <h3>Study Abroad Opportunities Available</h3>
+                <div class="searchcontrols">
+                    <div class="controlgroup">
+                        <label for="termselect">Term:</label>
+                        <select id="termselect" name="term">
+                            <option value="">Select Term</option>
+                            <option value="Fall 2019">Fall 2019</option>
+                            <option value="Spring 2020">Spring 2020</option>
+                        </select>
+                    </div>
+                    <div class="controlgroup">
+                        <label for="programselect">Program Name:</label>
+                        <select id="programselect" name="program">
+                            <option value="">Select Program</option>
+                            <option value="Chancellor's Scholars Ireland">Chancellor's Scholars Ireland</option>
+                            <option value="iASE Dominican Republic">iASE Dominican Republic</option>
+                            <option value="UK Finance">UK Finance</option>
+                            <option value="Bermuda Finance">Bermuda Finance</option>
+                        </select>
+                    </div>
+                    <div class="controlgroup">
+                        <label for="studycountryselect">Country:</label>
+                        <select id="studycountryselect" name="studycountry">
+                            <option value="">Select Country</option>
+                            <option value="Ireland">Ireland</option>
+                            <option value="Dominican Republic">Dominican Republic</option>
+                            <option value="United Kingdom">United Kingdom</option>
+                            <option value="Bermuda">Bermuda</option>
+                        </select>
+                    </div>
+                    <div class="controlgroup">
+                        <label for="studydepartmentselect">Department:</label>
+                        <select id="studydepartmentselect" name="studydepartment">
+                            <option value="">Select Department</option>
+                            <option value="HON">Honors</option>
+                            <option value="FIN">Finance</option>
+                        </select>
+                    </div>
+                    <div class="controlgroup">
+                        <label for="datesselect">Dates:</label>
+                        <select id="datesselect" name="dates">
+                            <option value="">Select Date Range</option>
+                            <option value="10/10/2019 to 10/15/2019">10/10/2019 to 10/15/2019</option>
+                            <option value="03/07/2020 to 03/14/2020">03/07/2020 to 03/14/2020</option>
+                            <option value="05/10/2020 to 05/16/2020">05/10/2020 to 05/16/2020</option>
+                        </select>
+                    </div>
+                    <button type="button" class="searchbtn">Search</button>
+                </div>
+                
+                <div class="tablecontainer">
+                    <table id="studyabroadresults">
+                        <thead>
+                            <tr>
+                                <th>Term</th>
+                                <th>Program Name</th>
+                                <th>Country</th>
+                                <th>College</th>
+                                <th>Dept.</th>
+                                <th>Dates</th>
+                                <th>Level</th>
+                                <th>Credits Avail.</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Fall 2019</td>
+                                <td>Chancellor's Scholars Ireland</td>
+                                <td>Ireland</td>
+                                <td>Honors</td>
+                                <td>HON</td>
+                                <td>10/10/2019 to 10/15/2019</td>
+                                <td>Undergraduate</td>
+                                <td>3</td>
+                            </tr>
+                            <tr>
+                                <td>Spring 2020</td>
+                                <td>iASE Dominican Republic: Grassroots Community Development</td>
+                                <td>Dominican Republic</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>Undergraduate</td>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <td>Spring 2020</td>
+                                <td>UK Finance</td>
+                                <td>United Kingdom</td>
+                                <td>Walker College of Business</td>
+                                <td>FIN</td>
+                                <td>03/07/2020 to 03/14/2020</td>
+                                <td>Undergraduate</td>
+                                <td>3</td>
+                            </tr>
+                            <tr>
+                                <td>Spring 2020</td>
+                                <td>Bermuda Finance</td>
+                                <td>Bermuda</td>
+                                <td>Walker College of Business</td>
+                                <td>FIN</td>
+                                <td>05/10/2020 to 05/16/2020</td>
+                                <td>Undergraduate</td>
+                                <td>3</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footercontent">
+            <p>&copy; 2025 Appalachian State University - Quality Enhancement Plan</p>
+            <p>For more information, visit <a href="https://qep.appstate.edu/" target="_blank">qep.appstate.edu</a></p>
+        </div>
+    </footer>
+</body>
+</html>
