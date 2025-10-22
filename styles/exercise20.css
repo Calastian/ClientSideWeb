@@ -1,0 +1,33 @@
+article {
+    border: 1px solid black;
+    margin: 10px;
+    padding: 10px;
+    /* Align the text ingredients to the left */
+    text-align: left;
+}
+
+table,
+td {
+    border: 1px solid black;
+    margin: 0px 5px;
+    padding:  5px;
+}
+
+label, button {
+    display: block;
+    margin: 5px;
+}
+
+.clickable{
+    cursor: pointer;
+    color: blue;
+    text-decoration: underline;
+}
+
+img {
+    cursor: pointer;
+}
+
+input {
+    width: 3em;
+}
