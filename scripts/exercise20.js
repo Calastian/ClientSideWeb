@@ -90,6 +90,7 @@ class BananaadeStand {
       this.emptyGlasses--;
       this.glassesOfBananaade++;
       this.updateAllInventory();
+      this.updateAdmin(this.glassesOfBananaade, this.income)
 
 
       return 1;
@@ -101,6 +102,7 @@ class BananaadeStand {
     if (this.glassesOfBananaade > 0) {
       this.glassesOfBananaade--;
       this.income += this.price;
+      this.updateAdmin(this.glassesOfBananaade, this.income)
       return 1;
     }
     return 0;
@@ -117,7 +119,15 @@ class BananaadeStand {
         break;
       }
     }
+    this.updateAdmin(this.glassesOfBananaade, this.income);
     return glassesSold;
+  }
+
+  changePrice(newPrice) {
+    
+      this.price = newPrice;
+      this.updateAdmin(this.glassesOfBananaade, this.income);
+      return true;
   }
 
   showIngredients() {
@@ -149,6 +159,7 @@ class BananaadeStand {
     let bananasCell2 = document.createElement('td');
     let bananasText2 = document.createTextNode(this.bananas.toString());
     bananasCell2.appendChild(bananasText2);
+    bananasCell2.style.textAlign = 'center';
     bananasRow.appendChild(bananasCell1);
     bananasRow.appendChild(bananasCell2);
     table.appendChild(bananasRow);
@@ -160,6 +171,7 @@ class BananaadeStand {
     let waterCell2 = document.createElement('td');
     let waterText2 = document.createTextNode(this.gallonsOfWater.toString());
     waterCell2.appendChild(waterText2);
+    waterCell2.style.textAlign = 'center';
     waterRow.appendChild(waterCell1);
     waterRow.appendChild(waterCell2);
     table.appendChild(waterRow);
@@ -170,6 +182,7 @@ class BananaadeStand {
     let sugarCell2 = document.createElement('td');
     let sugarText2 = document.createTextNode(this.cupsOfSugar.toString());
     sugarCell2.appendChild(sugarText2);
+    sugarCell2.style.textAlign = 'center';
     sugarRow.appendChild(sugarCell1);
     sugarRow.appendChild(sugarCell2);
     table.appendChild(sugarRow);
@@ -180,6 +193,7 @@ class BananaadeStand {
     let glassesCell2 = document.createElement('td');
     let glassesText2 = document.createTextNode(this.emptyGlasses.toString());
     glassesCell2.appendChild(glassesText2);
+    glassesCell2.style.textAlign = 'center';
     glassesRow.appendChild(glassesCell1);
     glassesRow.appendChild(glassesCell2);
     table.appendChild(glassesRow);
@@ -272,6 +286,32 @@ class BananaadeStand {
     this.updateInventory("Empty Glasses", this.emptyGlasses, this.minEmptyGlasses);
   }
 
+  updateAdmin(glasses, income)
+  {
+      const admin = document.getElementById('admin');
+      if (!admin) return;
+      const lis = admin.getElementsByTagName('li');
+      for (let li of lis) {
+        const text = li.innerText || '';
+        const colonIndex = text.indexOf(':');
+        const label = colonIndex === -1 ? text.trim() : text.substring(0, colonIndex).trim();
+        let val;
+        const lower = label.toLowerCase();
+        if (lower.includes('price')) {
+          val = this.price;
+          li.innerText = `${label}: $${Number(val).toFixed(2)}`;
+        } else if (lower.includes('glass')) {
+          val = (glasses !== undefined) ? glasses : this.glassesOfBananaade;
+          li.innerText = `${label}: ${val}`;
+        } else if (lower.includes('income')) {
+          val = (income !== undefined) ? income : this.income;
+          li.innerText = `${label}: $${Number(val).toFixed(2)}`;
+        }
+      }
+    
+  }
+  
+
 
 
 } // end of banna class
@@ -335,28 +375,40 @@ function initEvents() {
     ele.addEventListener("keyup", addIngredients);
   }
 
-  let buttons = document.querySelectorAll("button");
-  buttons[0].addEventListener("click", () => ls.makeBananaade());
-  buttons[1].addEventListener("click", () => ls.sellBananaade());
+  let makeBtn = document.querySelector(".makebtn");
+  let sellBtn = document.querySelector(".sellbtn");
+  
+  let priceBtn = document.querySelector(".pricebtn");
+  let sellMoreBtn = document.querySelector(".sellmorebtn");
+
+  makeBtn.addEventListener("click", () => ls.makeBananaade(), false);
+  sellBtn.addEventListener("click", () => ls.sellBananaade(), false);
+
+  priceBtn.addEventListener("click", () => {
+    let priceInput = document.getElementById("priceInput");
+    let newPrice = parseFloat(priceInput.value);
+    ls.changePrice(newPrice);
+  }, false);
+
+  sellMoreBtn.addEventListener("click", () => {
+    let sellMoreInput = document.getElementById("sellMoreInput");
+    let amount = parseInt(sellMoreInput.value);
+    if (amount >= 0 && amount <= 8) {
+      ls.sellMoreBananaade(amount);
+    }
+  }, false);
 
   let nodes = document.querySelectorAll('span')
   for (let ele of nodes) {
     ele.addEventListener("mouseover", (e) => {
       e.target.style.color = "purple";
       e.target.previousElementSibling.src = "../images/plus_dark.png";
-
-      // set image to plus dark.png using previousSibling
-      //set the text color to purple
     }, false);
     ele.addEventListener("mouseout", function (e) {
       e.target.style.color = "blue";
       e.target.previousElementSibling.src = "../images/plus_light.png";
-
     }, false);
-
-
   }
-
 }
 
 
@@ -368,7 +420,7 @@ function hideAll() {
 
 }
 
-
+this.addEventListener("dblclick", () => {hideAll()})
 
 
 let ls = new BananaadeStand(20, 10, 10, 10, 2.0);

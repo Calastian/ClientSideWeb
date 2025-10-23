@@ -35,9 +35,16 @@
 		</article>
 		<article>
             <h2>Controls</h2>
-            <button>Make Bananaade</button>
-            <button>Sell Bananaade</button>
-                
+            <button class="makebtn">Make Bananaade</button>
+            <button class="sellbtn">Sell Bananaade</button>
+            
+            <label for="priceInput">Set Price: $</label>
+            <input type="number" id="priceInput" value="2.00">
+            <button class="pricebtn">Update Price</button>
+            
+            <label for="sellMoreInput">Sell Multiple (0-8):</label>
+            <input type="number" id="sellMoreInput" min="0" max="8" value="1">
+            <button class="sellmorebtn">Sell Multiple</button>
 		</article>
   </body>
 </html>
