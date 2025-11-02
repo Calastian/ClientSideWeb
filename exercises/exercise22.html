@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <title>Navigation Toggle Example</title>
+
+    <style>
+        body {
+            background-color: black;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        nav ul li {
+            display: inline;
+            color: blue;
+            background-color: PeachPuff;
+            margin: 1px;
+            padding: 0px 2px;
+            font-size: 2em;
+            border: 1px solid red;
+        }
+
+        nav {
+            background-color: black;
+            padding: 2px 10px;
+            margin: 0px 10px;
+            width: fit-content;
+        }
+
+        nav ul {
+            display: inline;
+            margin: 0px;
+            padding: 0px;
+        }
+
+        nav img#minus {
+            margin-left: 2px;
+            position: relative;
+            top: 7px;
+        }
+
+        nav img#plus {
+            margin-left: 2px;
+            position: relative;
+            top: 3px;
+            display: none;
+        }
+
+        nav img:hover {
+            cursor: pointer;
+        }
+
+        nav span:hover {
+            cursor: pointer;
+        }
+
+
+        nav span {
+            font-size: 0em;
+            color: blue;
+            background-color: PeachPuff;
+            padding: 0px 3px;
+            border: 1px solid red;
+            display: none;
+        }
+    </style>
+    <script>
+        //Put all your code here.
+        $(function () {
+            $('#minus').on('click', function () {
+                $('#minus').hide();
+                $('#plus').show();
+                $('nav ul li')
+                    .animate({ 'font-size': '0em' }, 300)
+                    .promise()
+                    .done(function () {
+                        $('nav ul li').hide();
+                        $('nav span').show().animate({'font-size': '1em'}, 300);
+                    });
+            });
+
+            $('#plus').on('click', function () {
+                $('#plus').hide();
+                $('nav span')
+                    .animate({ 'font-size': '0em' }, 300)
+                    .promise()
+                    .done(function () {
+                        $('nav span').hide();
+                        $('nav ul li')
+                            .show()
+                            .animate({ 'font-size': '2em' }, 300)
+                            .promise()
+                            .done(function () {
+                                $('#minus').show();
+                            });
+                    });
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="https://facweb.cs.appstate.edu/swansonja">Home</a>
+            <li><a href="https://en.wikipedia.org/wiki/Cat">Cat</a>
+            <li><a href="https://en.wikipedia.org/wiki/Dog">Dog</a>
+            <li><a href="https://en.wikipedia.org/wiki/Horse">Horse</a>
+            <li><a href="https://en.wikipedia.org/wiki/Ferret">Ferret</a>
+        </ul>
+        <img id="minus" src="../images/minus_dark.png">
+        <span>NAV</span>
+        <img id="plus" src="../images/plus_dark.png">
+    </nav>
+</body>
+
+</html>
