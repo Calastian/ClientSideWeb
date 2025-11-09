@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset='utf-8'>
+    <title>JASONP</title>
+    <style>
+        table,
+        td,
+        th {
+            border: 1px solid black;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        function getStudyAbroad() {
+            $.ajax({
+                url: 'http://cs.appstate.edu/jas/3440/project/data_study_abroad.php',
+                dataType: 'jsonp',
+                success: (data) => {
+                    let table = "<table>\n<tr>";
+                    table += "<th>Term</th>";
+                    table += "<th>Country</th>";
+                    table += "<th>Level</th></tr>\n";
+
+                    for (let obj of data) {
+                        table += "<tr>";
+                        table += `<td>${obj.Term} ${obj.ProgramName}</td>`
+                        table += `<td>${obj.Countries}</td>`;
+                        table += `<td>${obj.Level}</td>`;
+
+                        table += "</tr>";
+                    }
+                    $("#study_abroad").html(table); //Assumes <div id="study_abroad"></div> in body.
+
+                }
+
+            });
+        }
+
+    </script>
+</head>
+
+<body>
+    <div id="study_abroad"></div>
+
+    <script>getStudyAbroad()</script>
+
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset='utf-8'>
+  <title>JASONP</title>
+  <style>
+    table,
+    td,
+    th {
+      border: 1px solid black;
+    }
+  </style>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script>
+
+    function testIt(data) {
+      let div = document.getElementById("language");
+      let table = "<table>\n<tr>";
+      table += "<th>Name</th>";
+      table += "<th>Language</th>";
+      table += "<th>Proficiency</th></tr>\n";
+      for (let obj of data) {
+        table += "<tr>";
+        table += `<td>${obj.Firstname} ${obj.Lastname}</td>`
+        table += `<td>${obj.Language}</td>`;
+        table += `<td>${obj.Proficiency}</td>`;
+
+        table += "</tr>";
+      }
+      table += "</table>\n";
+      div.innerHTML = table;
+    }
+
+  </script>
+</head>
+
+<body>
+  <div id="language"></div>
+
+  <script src="http://cs.appstate.edu/jas/3440/project/data_language.php?callback=testIt"></script>
+  
+</body>
+
+</html>
